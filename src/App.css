@@ -35,9 +35,9 @@ header {
 .drawerButton {
     width: 48px;
     height: 36px;
-    text-align: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
     position: relative;
     z-index: 200;
 
@@ -45,7 +45,7 @@ header {
         width: 20px;
         margin-inline: auto;
         margin-bottom: 4px;
-        transition: all 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out;
     }
 
     img.active {
@@ -55,6 +55,7 @@ header {
     span {
         font-size: 12px;
         letter-spacing: 0.02em;
+        text-align: center;
     }
 }
 
