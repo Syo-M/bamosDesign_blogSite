@@ -10,6 +10,12 @@ img {
     vertical-align: bottom;
 }
 
+button {
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+}
+
 fieldset {
     border: none;
     margin: 0;
@@ -27,6 +33,7 @@ select {
     border: 1px solid black;
     padding: 4px;
     border-radius: 2px;
+    appearance: none;
 }
 
 textarea {
