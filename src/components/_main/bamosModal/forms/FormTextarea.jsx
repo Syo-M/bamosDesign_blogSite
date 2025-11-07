@@ -9,7 +9,8 @@ export default function FormTextarea({ form, setForm }) {
     return (
         <fieldset>
             <legend>
-                What kind of special features or topics would you like to read on BAMOS DESIGN in the future?
+                Message
+                {/* What kind of special features or topics would you like to read on BAMOS DESIGN in the future? */}
             </legend>
             <textarea
                 name="comment"

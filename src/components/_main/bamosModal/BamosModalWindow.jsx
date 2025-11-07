@@ -41,10 +41,10 @@ export default function BamosModalWindow({ setIsOpen }) {
 
                     <div className="modalBox">
                         <h2>FEEDBACK</h2>
-                        <p>
+                        {/* <p>
                             Thank you for visiting BAMOS DESIGN.Please take a moment to complete our survey to help us
                             improve our services.
-                        </p>
+                        </p> */}
 
                         <form action="#" method="post">
                             {/* propsとしてそれぞれのパーツにstate変数とstateセッタ関数を渡す */}
