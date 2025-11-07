@@ -39,6 +39,7 @@ select {
     padding: 4px;
     border-radius: 2px;
     appearance: none;
+    color: #333;
 }
 
 textarea {
