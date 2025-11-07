@@ -26,7 +26,7 @@ export default function FormCheckMulti({ form, setForm }) {
                         checked={form.favorite.includes("music")}
                         onChange={handleFormMulti}
                     />
-                    <label htmlFor="music">音楽</label>
+                    <label htmlFor="music">Music</label>
                 </span>
 
                 <span>
@@ -38,7 +38,7 @@ export default function FormCheckMulti({ form, setForm }) {
                         checked={form.favorite.includes("art")}
                         onChange={handleFormMulti}
                     />
-                    <label htmlFor="art">芸術</label>
+                    <label htmlFor="art">Art</label>
                 </span>
 
                 <span>
@@ -50,7 +50,7 @@ export default function FormCheckMulti({ form, setForm }) {
                         checked={form.favorite.includes("design")}
                         onChange={handleFormMulti}
                     />
-                    <label htmlFor="design">デザイン</label>
+                    <label htmlFor="design">Design</label>
                 </span>
 
                 <span>
@@ -62,7 +62,7 @@ export default function FormCheckMulti({ form, setForm }) {
                         checked={form.favorite.includes("programing")}
                         onChange={handleFormMulti}
                     />
-                    <label htmlFor="programing">プログラミング</label>
+                    <label htmlFor="programing">Programing</label>
                 </span>
             </div>
         </div>

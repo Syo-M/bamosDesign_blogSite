@@ -297,8 +297,8 @@ main {
 
 .formBlock {
     display: grid;
-    gap: 16px;
-    grid-template-columns: repeat(auto-fit, max(126px));
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, max(114px));
 }
 
 /****************** _footer *******************/
