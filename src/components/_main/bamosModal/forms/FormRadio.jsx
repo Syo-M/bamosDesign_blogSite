@@ -74,12 +74,12 @@ export default function FormRadio({ form, setForm }) {
                     <input
                         type="radio"
                         name="age"
-                        id="age50AndAbove"
-                        value="50AndAbove"
-                        checked={form.age === "50AndAbove"}
+                        id="50AndOver"
+                        value="50AndOver"
+                        checked={form.age === "50AndOver"}
                         onChange={handleForm}
                     />
-                    <label htmlFor="age50AndAbove">50 and above</label>
+                    <label htmlFor="50AndOver">50 & over</label>
                 </span>
             </p>
         </fieldset>

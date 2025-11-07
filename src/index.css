@@ -14,6 +14,11 @@ button {
     appearance: none;
     -webkit-appearance: none;
     border: none;
+    color: #333;
+}
+
+span {
+    color: #333;
 }
 
 fieldset {
