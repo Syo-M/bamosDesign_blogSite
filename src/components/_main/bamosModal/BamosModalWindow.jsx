@@ -4,7 +4,7 @@ import FormSelect from "./forms/FormSelect";
 import FormCheckMulti from "./forms/FormCheckMulti";
 import FormTextarea from "./forms/FormTextarea";
 import BamosButton from "../../_commons/BamosButton/BamosButton";
-import modalImg from "@/assets/images/modalDog.webp";
+// import modalImg from "@/assets/images/modalDog.webp";
 import closeButton from "@/assets/images/closeButton.svg";
 
 export default function BamosModalWindow({ setIsOpen }) {
@@ -35,9 +35,9 @@ export default function BamosModalWindow({ setIsOpen }) {
         <>
             <div className="modalOverlay" onClick={closeModal}>
                 <div className="modalContent" onClick={(e) => e.stopPropagation()}>
-                    <div className="modalImg">
+                    {/* <div className="modalImg">
                         <img src={modalImg} alt="キツネ・・・じゃなくて子犬。子犬です。" />
-                    </div>
+                    </div> */}
 
                     <div className="modalBox">
                         <h2>FEEDBACK</h2>
