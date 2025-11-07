@@ -1,4 +1,4 @@
-import drawerButtonImg from "@/assets/images/drawerbutton.svg";
+import drawerButtonImg from "@/assets/images/drawerButton.svg";
 
 // 親コンポーネントからpropsとしてuseStateのstate変数とstateセッタ関数を受け取る
 export default function BamosDrawerButton({ open, isOpen }) {
