@@ -1,0 +1,13 @@
+header {
+    /* max-width: 994px; */
+    margin-inline: auto;
+
+    #logo {
+        position: relative;
+        z-index: 200;
+    }
+}
+
+.header {
+    margin-inline: auto;
+}

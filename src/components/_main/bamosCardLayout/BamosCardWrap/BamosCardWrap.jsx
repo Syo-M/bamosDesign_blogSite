@@ -1,9 +1,10 @@
-import bamosList from "./bamosList.js";
-import BamosCard from "./BamosCard.jsx";
+import bamosList from "../bamosList.js";
+import BamosCard from "../BamosCard/BamosCard.jsx";
+import styles from "./BamosCardWrap.module.css";
 
 export default function BamosCardWrap() {
     return (
-        <div className="card-container">
+        <div className={styles.cardContainer}>
             {bamosList.map((item, index) => (
                 <BamosCard
                     key={index}

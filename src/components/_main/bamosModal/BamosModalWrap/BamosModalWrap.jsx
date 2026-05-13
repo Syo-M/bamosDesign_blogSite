@@ -1,6 +1,7 @@
 import { useState } from "react";
-import BamosButton from "../../_commons/BamosButton/BamosButton";
-import BamosModalWindow from "./BamosModalWindow";
+import BamosButton from "../../../_commons/BamosButton/BamosButton";
+import BamosModalWindow from "../BamosModalWindow/BamosModalWindow";
+import styles from "./BamosModalWrap";
 
 export default function BamosModalWrap() {
     const [isOpen, setIsOpen] = useState(false);
@@ -11,7 +12,7 @@ export default function BamosModalWrap() {
 
     return (
         <>
-            <div className="modalWrapper">
+            <div className={styles.modalWrapper}>
                 <BamosButton onClick={openModal} label="Feedback" />
 
                 {isOpen && <BamosModalWindow setIsOpen={setIsOpen} />}

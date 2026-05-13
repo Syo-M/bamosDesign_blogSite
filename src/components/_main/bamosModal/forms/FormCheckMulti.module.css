@@ -1,0 +1,5 @@
+.formBlock {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, max(114px));
+}

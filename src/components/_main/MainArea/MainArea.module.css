@@ -1,0 +1,12 @@
+.main {
+    padding-inline: 1rem;
+}
+
+.mainWrap {
+    max-width: 994px;
+    margin-inline: auto;
+}
+
+.text {
+    margin-block-end: 26px;
+}

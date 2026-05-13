@@ -1,0 +1,6 @@
+.footer {
+    text-align: center;
+    padding: 1rem;
+    background: linear-gradient(180deg, #2d0000 0%, #000 100%);
+    margin-block-start: 50px;
+}

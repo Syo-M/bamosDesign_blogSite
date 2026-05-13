@@ -3,6 +3,7 @@ import thumbsUp from "@/assets/images/thumbsUp.svg";
 import isActiveThumbsUp from "@/assets/images/isActive_thumbsUp.svg";
 import thumbsDown from "@/assets/images/thumbsDown.svg";
 import isActiveThumbsDown from "@/assets/images/isActive_thumbsDown.svg";
+import styles from "./ThumbsUpDownButton.module.css";
 
 export default function ThumbsUpDownButton({ init = 0, GorB = true }) {
     const [count, setCount] = useState(init);
@@ -27,12 +28,12 @@ export default function ThumbsUpDownButton({ init = 0, GorB = true }) {
     }
 
     return (
-        <div className="thumbs">
-            <button className={`likeButton ${isActive ? "like" : ""}`} onClick={handleClick}>
-                <span className="thumbsIcons">
+        <div className={styles.thumbs}>
+            <button className={`${styles.likeButton} ${isActive ? styles.like : ""}`} onClick={handleClick}>
+                <span className={styles.thumbsIcons}>
                     <img src={icon} alt={GorB ? "thumbUp" : "thumbDown"} />
                 </span>
-                <span className="count">{count}</span>
+                <span className={styles.count}>{count}</span>
             </button>
         </div>
     );

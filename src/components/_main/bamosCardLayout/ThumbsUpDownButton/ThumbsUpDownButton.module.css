@@ -1,0 +1,17 @@
+
+.thumbs {
+    .likeButton {
+        display: flex;
+        gap: 0.5rem;
+    }
+
+    .thumbsIcons {
+        img {
+            vertical-align: bottom;
+        }
+    }
+
+    .count {
+        font-size: 12px;
+    }
+}

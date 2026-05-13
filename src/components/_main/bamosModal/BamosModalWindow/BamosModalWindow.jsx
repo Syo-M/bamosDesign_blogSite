@@ -1,11 +1,12 @@
 import { useState } from "react";
-import FormRadio from "./forms/FormRadio";
-import FormSelect from "./forms/FormSelect";
-import FormCheckMulti from "./forms/FormCheckMulti";
-import FormTextarea from "./forms/FormTextarea";
-import BamosButton from "../../_commons/BamosButton/BamosButton";
+import FormRadio from "../forms/FormRadio";
+import FormSelect from "../forms/FormSelect";
+import FormCheckMulti from "../forms/FormCheckMulti";
+import FormTextarea from "../forms/FormTextarea";
+import BamosButton from "../../../_commons/BamosButton/BamosButton";
 // import modalImg from "@/assets/images/modalDog.webp";
 import closeButton from "@/assets/images/closeButton.svg";
+import styles from "./BamosModalWindow.module.css";
 
 export default function BamosModalWindow({ setIsOpen }) {
     // フォームの各パーツに送るuseState。
@@ -33,13 +34,13 @@ export default function BamosModalWindow({ setIsOpen }) {
 
     return (
         <>
-            <div className="modalOverlay" onClick={closeModal}>
-                <div className="modalContent" onClick={(e) => e.stopPropagation()}>
-                    {/* <div className="modalImg">
+            <div className={styles.modalOverlay} onClick={closeModal}>
+                <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+                    {/* <div className={styles.modalImg}>
                         <img src={modalImg} alt="キツネ・・・じゃなくて子犬。子犬です。" />
                     </div> */}
 
-                    <div className="modalBox">
+                    <div className={styles.modalBox}>
                         <h2>FEEDBACK</h2>
                         {/* <p>
                             Thank you for visiting BAMOS DESIGN.Please take a moment to complete our survey to help us
@@ -57,7 +58,7 @@ export default function BamosModalWindow({ setIsOpen }) {
                             <BamosButton onClick={handleSubmit} label="SUBMIT" />
                         </form>
 
-                        <button className="closeButton" onClick={closeModal}>
+                        <button className={styles.closeButton} onClick={closeModal}>
                             <img src={closeButton} alt="閉じるボタン" />
                         </button>
                     </div>

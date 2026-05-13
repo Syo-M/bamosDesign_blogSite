@@ -1,3 +1,4 @@
+import styles from "./FormCheckMulti.module.css";
 export default function FormCheckMulti({ form, setForm }) {
     const handleFormMulti = (e) => {
         const fa = form.favorite;
@@ -16,7 +17,7 @@ export default function FormCheckMulti({ form, setForm }) {
     return (
         <div>
             <legend>What is your favorite field or area of interest?</legend>
-            <div className="formBlock">
+            <div className={styles.formBlock}>
                 <span>
                     <input
                         id="music"

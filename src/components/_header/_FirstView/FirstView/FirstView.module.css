@@ -1,0 +1,10 @@
+.firstViewWrap {
+    max-width: 994px;
+    height: 100dvh;
+    margin-inline: auto;
+    position: relative;
+
+    @media (width >=500px) {
+        height: 612px;
+    }
+}
