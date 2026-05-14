@@ -1,3 +1,4 @@
+import { expect, userEvent, within } from 'storybook/test';
 import ThumbsUpDownButton from './ThumbsUpDownButton';
 
 export default {
@@ -26,6 +27,21 @@ export const Good = {
     render: (args) => (
         <ThumbsUpDownButton key={`${args.GorB}-${args.init}`} {...args} />
     ),
+    play: async ({ canvasElement }) => {
+        const canvas = within(canvasElement);
+
+        const button = canvas.getByRole('button');
+
+        await expect(canvas.getByText('0')).toBeInTheDocument();
+
+        await userEvent.click(button);
+
+        await expect(canvas.getByText('1')).toBeInTheDocument();
+
+        await userEvent.click(button);
+
+        await expect(canvas.getByText('0')).toBeInTheDocument();
+    },
 };
 
 export const Bad = {
@@ -36,6 +52,21 @@ export const Bad = {
     render: (args) => (
         <ThumbsUpDownButton key={`${args.GorB}-${args.init}`} {...args} />
     ),
+    play: async ({ canvasElement }) => {
+        const canvas = within(canvasElement);
+
+        const button = canvas.getByRole('button');
+
+        await expect(canvas.getByText('0')).toBeInTheDocument();
+
+        await userEvent.click(button);
+
+        await expect(canvas.getByText('1')).toBeInTheDocument();
+
+        await userEvent.click(button);
+
+        await expect(canvas.getByText('0')).toBeInTheDocument();
+    },
 };
 
 export const InitialCount = {
@@ -46,6 +77,36 @@ export const InitialCount = {
     render: (args) => (
         <ThumbsUpDownButton key={`${args.GorB}-${args.init}`} {...args} />
     ),
+    play: async ({ canvasElement }) => {
+        const canvas = within(canvasElement);
+
+        const button = canvas.getByRole('button');
+
+        await expect(canvas.getByText('10')).toBeInTheDocument();
+
+        await userEvent.click(button);
+
+        await expect(canvas.getByText('11')).toBeInTheDocument();
+
+        await userEvent.click(button);
+
+        await expect(canvas.getByText('10')).toBeInTheDocument();
+    },
+};
+
+export const WithoutProps = {
+    render: () => <ThumbsUpDownButton />,
+    play: async ({ canvasElement }) => {
+        const canvas = within(canvasElement);
+
+        const button = canvas.getByRole('button');
+
+        await expect(canvas.getByText('0')).toBeInTheDocument();
+
+        await userEvent.click(button);
+
+        await expect(canvas.getByText('1')).toBeInTheDocument();
+    },
 };
 
 export const All = {
@@ -61,4 +122,18 @@ export const All = {
             <ThumbsUpDownButton init={3} GorB={false} />
         </div>
     ),
+    play: async ({ canvasElement }) => {
+        const canvas = within(canvasElement);
+
+        const buttons = canvas.getAllByRole('button');
+
+        await expect(canvas.getByText('12')).toBeInTheDocument();
+        await expect(canvas.getByText('3')).toBeInTheDocument();
+
+        await userEvent.click(buttons[0]);
+        await userEvent.click(buttons[1]);
+
+        await expect(canvas.getByText('13')).toBeInTheDocument();
+        await expect(canvas.getByText('4')).toBeInTheDocument();
+    },
 };

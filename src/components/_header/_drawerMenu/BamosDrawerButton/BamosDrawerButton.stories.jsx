@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { expect, userEvent, within } from 'storybook/test';
 import BamosDrawerButton from './BamosDrawerButton';
 
 export default {
@@ -26,11 +27,28 @@ function StatefulDrawerButton({ open: initialOpen }) {
     return <BamosDrawerButton open={open} isOpen={setOpen} />;
 }
 
-export const Default = {
+export const Closed = {
     args: {
         open: false,
     },
     render: (args) => <StatefulDrawerButton {...args} />,
+    play: async ({ canvasElement }) => {
+        const canvas = within(canvasElement);
+
+        const button = canvas.getByRole('button', {
+            name: /MENU/,
+        });
+
+        await expect(button).toBeInTheDocument();
+
+        await userEvent.click(button);
+
+        await expect(
+            canvas.getByRole('button', {
+                name: /CLOSE/,
+            })
+        ).toBeInTheDocument();
+    },
 };
 
 export const Open = {
@@ -38,11 +56,21 @@ export const Open = {
         open: true,
     },
     render: (args) => <StatefulDrawerButton {...args} />,
-};
+    play: async ({ canvasElement }) => {
+        const canvas = within(canvasElement);
 
-export const Closed = {
-    args: {
-        open: false,
+        const button = canvas.getByRole('button', {
+            name: /CLOSE/,
+        });
+
+        await expect(button).toBeInTheDocument();
+
+        await userEvent.click(button);
+
+        await expect(
+            canvas.getByRole('button', {
+                name: /MENU/,
+            })
+        ).toBeInTheDocument();
     },
-    render: (args) => <StatefulDrawerButton {...args} />,
 };

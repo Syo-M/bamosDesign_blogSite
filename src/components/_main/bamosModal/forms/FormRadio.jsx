@@ -1,3 +1,5 @@
+import styles from './Form.module.css';
+
 export default function FormRadio({ form, setForm }) {
     const handleForm = (e) => {
         setForm({
@@ -9,7 +11,7 @@ export default function FormRadio({ form, setForm }) {
     return (
         <fieldset>
             <legend>Age</legend>
-            <p className="formBlock">
+            <p className={styles.formBlock}>
                 <span>
                     <input
                         type="radio"

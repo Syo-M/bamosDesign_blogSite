@@ -1,22 +1,23 @@
-import styles from "./FormCheckMulti.module.css";
+import styles from './Form.module.css';
+
 export default function FormCheckMulti({ form, setForm }) {
     const handleFormMulti = (e) => {
-        const fa = form.favorite;
-        if (e.target.checked) {
-            fa.push(e.target.value);
-        } else {
-            fa.splice(fa.indexOf(e.target.value), 1);
-        }
+        const { name, value, checked } = e.target;
+
+        const nextFavorite = checked
+            ? [...form.favorite, value]
+            : form.favorite.filter((item) => item !== value);
 
         setForm({
             ...form,
-            [e.target.name]: fa,
+            [name]: nextFavorite,
         });
     };
 
     return (
-        <div>
+        <fieldset>
             <legend>What is your favorite field or area of interest?</legend>
+
             <div className={styles.formBlock}>
                 <span>
                     <input
@@ -24,7 +25,7 @@ export default function FormCheckMulti({ form, setForm }) {
                         name="favorite"
                         type="checkbox"
                         value="music"
-                        checked={form.favorite.includes("music")}
+                        checked={form.favorite.includes('music')}
                         onChange={handleFormMulti}
                     />
                     <label htmlFor="music">Music</label>
@@ -36,7 +37,7 @@ export default function FormCheckMulti({ form, setForm }) {
                         name="favorite"
                         type="checkbox"
                         value="art"
-                        checked={form.favorite.includes("art")}
+                        checked={form.favorite.includes('art')}
                         onChange={handleFormMulti}
                     />
                     <label htmlFor="art">Art</label>
@@ -48,7 +49,7 @@ export default function FormCheckMulti({ form, setForm }) {
                         name="favorite"
                         type="checkbox"
                         value="design"
-                        checked={form.favorite.includes("design")}
+                        checked={form.favorite.includes('design')}
                         onChange={handleFormMulti}
                     />
                     <label htmlFor="design">Design</label>
@@ -60,12 +61,12 @@ export default function FormCheckMulti({ form, setForm }) {
                         name="favorite"
                         type="checkbox"
                         value="programing"
-                        checked={form.favorite.includes("programing")}
+                        checked={form.favorite.includes('programing')}
                         onChange={handleFormMulti}
                     />
                     <label htmlFor="programing">Programing</label>
                 </span>
             </div>
-        </div>
+        </fieldset>
     );
 }
