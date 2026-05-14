@@ -6,21 +6,21 @@
     align-items: center;
     position: relative;
     z-index: 200;
+}
 
-    img {
-        width: 20px;
-        margin-inline: auto;
-        margin-bottom: 4px;
-        transition: transform 0.3s ease-in-out;
-    }
+.drawerButtonImg {
+    width: 20px;
+    margin-inline: auto;
+    margin-bottom: 4px;
+    transition: transform 0.3s ease-in-out;
+}
 
-    img.active {
-        transform: rotate(135deg);
-    }
+.drawerButtonImg.active {
+    transform: rotate(135deg);
+}
 
-    span {
-        font-size: 12px;
-        letter-spacing: 0.02em;
-        text-align: center;
-    }
+.span {
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    text-align: center;
 }

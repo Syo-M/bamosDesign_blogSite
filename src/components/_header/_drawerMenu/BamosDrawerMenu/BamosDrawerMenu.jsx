@@ -5,9 +5,11 @@ import styles from "./BamosDrawerMenu.module.css";
 export default function BamosDrawerMenu({ open }) {
     return (
         <nav className={open ? styles.drawerMenu + " " + styles.open : styles.drawerMenu}>
-            <ul>
+            <ul className={styles.navList}>
                 {navList.map((item) => (
-                    <li key={item.id}>{item.list}</li>
+                    <li key={item.id} className={styles.navItem}>
+                        {item.list}
+                    </li>
                 ))}
             </ul>
         </nav>

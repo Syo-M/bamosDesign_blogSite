@@ -9,23 +9,23 @@
     z-index: 150;
     background-color: rgba(255, 255, 255, 0.8);
     transition: all 0.3s ease-in-out;
+}
 
-    ul {
-        display: flex;
-        flex-direction: column;
+.navList {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    list-style: none;
+
+    @media (width >=768px) {
+        flex-direction: row;
+        justify-content: center;
         gap: 40px;
-        list-style: none;
-
-        @media (width >=768px) {
-            flex-direction: row;
-            justify-content: center;
-            gap: 40px;
-        }
-
-        li {
-            font-weight: bold;
-        }
     }
+}
+
+.navItem {
+    font-weight: bold;
 }
 
 .drawerMenu.open {
