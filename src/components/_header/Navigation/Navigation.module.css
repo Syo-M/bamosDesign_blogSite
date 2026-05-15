@@ -5,9 +5,12 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 100;
+    z-index: 160;
+    transition: all 0.3s ease;
+}
 
-
+.navigation_container.open{
+    background-color: #CD3796;
 }
 
 .navigation_box {

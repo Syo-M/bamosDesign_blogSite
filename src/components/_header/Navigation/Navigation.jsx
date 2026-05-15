@@ -10,9 +10,9 @@ export default function Navigation() {
     const [open, isOpen] = useState(false);
     return (
         <>
-            <div className={styles.navigation_container}>
+            <div className={`${styles.navigation_container} ${open ? styles.open : ""}`}>
                 <div className={styles.navigation_box}>
-                    <BamosLogo type="black" />
+                    {open ? <BamosLogo type="white" /> : <BamosLogo type="black" />}
                     <BamosDrawerButton open={open} isOpen={isOpen} />
                 </div>
                 <BamosDrawerMenu open={open} />
