@@ -14,58 +14,33 @@ export default function FormCheckMulti({ form, setForm }) {
         });
     };
 
+    const checkboxList = [
+        { id: 'music', value: 'music', label: 'Music' },
+        { id: 'art', value: 'art', label: 'Art' },
+        { id: 'design', value: 'design', label: 'Design' },
+        { id: 'programing', value: 'programing', label: 'Programing' },
+    ];
+
     return (
         <fieldset>
             <legend>What is your favorite field or area of interest?</legend>
 
             <div className={styles.formBlock}>
-                <span>
-                    <input
-                        id="music"
-                        name="favorite"
-                        type="checkbox"
-                        value="music"
-                        checked={form.favorite.includes('music')}
-                        onChange={handleFormMulti}
-                    />
-                    <label htmlFor="music">Music</label>
-                </span>
 
-                <span>
-                    <input
-                        id="art"
-                        name="favorite"
-                        type="checkbox"
-                        value="art"
-                        checked={form.favorite.includes('art')}
-                        onChange={handleFormMulti}
-                    />
-                    <label htmlFor="art">Art</label>
-                </span>
+                {checkboxList.map((checkbox) => (
+                    <span key={checkbox.id}>
+                        <input
+                            id={checkbox.id}
+                            name="favorite"
+                            type="checkbox"
+                            value={checkbox.value}
+                            checked={form.favorite.includes(checkbox.value)}
+                            onChange={handleFormMulti}
+                        />
+                        <label htmlFor={checkbox.id}>{checkbox.label}</label>
+                    </span>
+                ))}
 
-                <span>
-                    <input
-                        id="design"
-                        name="favorite"
-                        type="checkbox"
-                        value="design"
-                        checked={form.favorite.includes('design')}
-                        onChange={handleFormMulti}
-                    />
-                    <label htmlFor="design">Design</label>
-                </span>
-
-                <span>
-                    <input
-                        id="programing"
-                        name="favorite"
-                        type="checkbox"
-                        value="programing"
-                        checked={form.favorite.includes('programing')}
-                        onChange={handleFormMulti}
-                    />
-                    <label htmlFor="programing">Programing</label>
-                </span>
             </div>
         </fieldset>
     );

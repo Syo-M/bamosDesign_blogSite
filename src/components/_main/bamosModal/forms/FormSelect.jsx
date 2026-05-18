@@ -6,17 +6,25 @@ export default function FormSelect({ form, setForm }) {
         });
     };
 
+    const optionList = [
+        { value: 'noSelect', label: '--１つ選択してください--' },
+        { value: 'friend', label: '友人の紹介' },
+        { value: 'sns', label: 'SNS' },
+        { value: 'banner', label: 'Webバナー' },
+        { value: 'movie', label: '動画配信サイト' },
+        { value: 'poster', label: '広告・ポスター' },
+        { value: 'other', label: 'その他' },
+    ];
+
     return (
         <fieldset>
             <legend>How did you hear about BAMOS DESIGN?</legend>
             <select name="media" id="media" value={form.media} onChange={handleForm}>
-                <option value="noSelect">--１つ選択してください--</option>
-                <option value="friend">友人の紹介</option>
-                <option value="sns">SNS</option>
-                <option value="banner">Webバナー</option>
-                <option value="movie">動画配信サイト</option>
-                <option value="poster">広告・ポスター</option>
-                <option value="other">その他</option>
+                {optionList.map((option) => (
+                    <option key={option.value} value={option.value}>
+                        {option.label}
+                    </option>
+                ))}
             </select>
         </fieldset>
     );
