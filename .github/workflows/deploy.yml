@@ -2,7 +2,7 @@ name: Deploy Vite React to GitHub Pages
 
 on:
     push:
-        branches: ["main"] # ← main ブランチに push で実行
+        branches: ["ver2_2026"] # ← main ブランチに push で実行
     workflow_dispatch:
 
 permissions:

@@ -3,9 +3,12 @@
     .likeButton {
         display: flex;
         gap: 0.5rem;
+        align-items: center;
     }
 
     .thumbsIcons {
+        width: 20px;
+        height: 20px;
         img {
             vertical-align: bottom;
         }
