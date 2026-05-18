@@ -16,7 +16,7 @@ export default function ThumbsUpDownButton({ init = 0, GorB = true }) {
 
     // propsのGorBに応じてアイコンを切り替える。
     // GorBがtrueならいいねボタン、falseならバッドボタンに対応するために変数iconを宣言。中身はまだ未定義。
-    // useStateで管理しているので、関数handleClickが実行されるたびに再レンダーされて画像が切り替わる。
+    // useStateで管理しているので、関数handleClickが実行されるたびに再レンダーされて画像が切り替わるようになる。
     let icon;
 
     if (GorB) {
