@@ -10,8 +10,12 @@ export default function BamosDrawerButton({ open, isOpen }) {
     return (
         <>
             <button className={`${styles.drawerButton} ${open ? styles.open : ""}`} onClick={handleClick}>
-                <img src={drawerButtonImg} alt="ドロワーボタン" className={`${styles.drawerButtonImg} ${open ? styles.active : ""}`} />
-                <span className={styles.span}>{open ? "CLOSE" : "MENU"}</span>
+                <span className={`${styles.drawerButtonCross} ${open ? styles.active : ""}`}>
+                    <span className={styles.drawerButtonBar}></span>
+                    <span className={styles.drawerButtonBar}></span>
+                </span>
+                
+                <span className={`${styles.span} ${open ? styles.active : ""}`}>{open ? "CLOSE" : "MENU"}</span>
             </button>
         </>
     );

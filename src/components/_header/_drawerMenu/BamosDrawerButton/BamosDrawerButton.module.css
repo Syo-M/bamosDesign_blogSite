@@ -15,8 +15,40 @@
     transition: transform 0.3s ease-in-out;
 }
 
-.drawerButtonImg.active {
+.drawerButtonCross{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin-block-end: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+.drawerButtonCross .drawerButtonBar:first-child{
+    transform: rotate(90deg);
+}
+
+.drawerButtonBar{
+    display: inline-block;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    width: 20px;
+    height: 4px;
+    background-color: #000;
+    
+}
+
+.drawerButtonCross.active {
     transform: rotate(135deg);
+}
+
+.drawerButtonCross.active .drawerButtonBar{
+    background-color: white;
+}
+
+.span.active{
+    color: white;
+    transition: all 0.3s ease-in-out;
 }
 
 .span {

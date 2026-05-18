@@ -5,7 +5,7 @@
     align-items: center;
     padding-block: 120px;
     position: fixed;
-    top:0;
+    top: 68px;/* マジックナンバーなので解決方法を考える必要がある。z-index問題が解決しない */
     opacity: 0;
     visibility: hidden;
     z-index: 150;
