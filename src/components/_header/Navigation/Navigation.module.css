@@ -49,4 +49,8 @@
         margin-inline: 0;
         padding-block-start: 0;
     }
+
+    img{
+        min-width: 193px;
+    }
 }
