@@ -4,6 +4,6 @@
     padding-block: 4px;
     border-block: 1px solid black;
     margin-block-start: 60px;
-    margin-block-end: 40px;
+    margin-block-end: clamp(24px, calc(16.606px + 1.972vw), 45px);
     margin-inline: auto;
 }
