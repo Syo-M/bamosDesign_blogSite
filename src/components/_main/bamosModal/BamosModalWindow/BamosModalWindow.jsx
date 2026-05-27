@@ -2,17 +2,18 @@ import { useState } from "react";
 import FormRadio from "../forms/FormRadio";
 import FormSelect from "../forms/FormSelect";
 import FormCheckMulti from "../forms/FormCheckMulti";
+import FormCheckMulti2 from "../forms/FormCheckMulti2";
 import FormTextarea from "../forms/FormTextarea";
 import BamosButton from "../../../_commons/BamosButton/BamosButton";
 // import modalImg from "@/assets/images/modalDog.webp";
 import closeButton from "@/assets/images/closeButton.svg";
 import styles from "./BamosModalWindow.module.css";
 
-export default function BamosModalWindow({ setIsOpen }) {
+export default function BamosModalWindow({ setIsOpen , ...props }) {
     // フォームの各パーツに送るuseState。
     // 子コンポーネントのフォームに入力された値がここに集約される。
     const [form, setForm] = useState({
-        media: "",
+        [props.pro1]: "",
         age: "",
         favorite: [],
         comment: "",
@@ -21,7 +22,7 @@ export default function BamosModalWindow({ setIsOpen }) {
     //SUBMITボタンを押した時の処理
     const handleSubmit = () => {
         console.log(`年齢：${form.age}`);
-        console.log(`どうやってこのサイトを知ったのか？：${form.media}`);
+        console.log(`どうやってこのサイトを知ったのか？：${form[props.pro1]}`);
         console.log(`興味のあるジャンル：${form.favorite.join(", ")}`);
         console.log(`ご意見：${form.comment}`);
     };
@@ -50,8 +51,9 @@ export default function BamosModalWindow({ setIsOpen }) {
                         <form action="#" method="post">
                             {/* propsとしてそれぞれのパーツにstate変数とstateセッタ関数を渡す */}
                             <FormRadio form={form} setForm={setForm} />
-                            <FormSelect form={form} setForm={setForm} />
-                            <FormCheckMulti form={form} setForm={setForm} />
+                            <FormSelect form={form} setForm={setForm} name={props.pro1} />
+                            {/* <FormCheckMulti form={form} setForm={setForm} /> */}
+                            <FormCheckMulti2 form={form} setForm={setForm} />
                             <FormTextarea form={form} setForm={setForm} />
 
                             {/* 集計結果をコンソールに表示するボタン */}

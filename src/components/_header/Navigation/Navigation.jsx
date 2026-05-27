@@ -1,24 +1,47 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BamosDrawerButton from "../_drawerMenu/BamosDrawerButton/BamosDrawerButton";
 import BamosDrawerMenu from "../_drawerMenu/BamosDrawerMenu/BamosDrawerMenu";
 import BamosLogo from "../../_commons/BamosLogo/BamosLogo";
 import styles from "./Navigation.module.css";
 
 export default function Navigation() {
-    // useStateでドロワーメニューの開閉状態を管理。子コンポーネントにpropsとして渡し、
-    // 子コンポーネント内で状態を変更できるようにする。
+    // ドロワーメニューの開閉状態
     const [open, isOpen] = useState(false);
+
+    // 画面幅が768px以上かどうか
+    const [isDesktop, setIsDesktop] = useState(false);
+
+    useEffect(() => {
+        const mediaQuery = window.matchMedia("(min-width: 768px)");
+
+        // 初回判定
+        setIsDesktop(mediaQuery.matches);
+
+        // 画面幅が変わった時に実行
+        const handleChange = (event) => {
+            setIsDesktop(event.matches);
+        };
+
+        mediaQuery.addEventListener("change", handleChange);
+
+        // コンポーネントが消える時にイベントを解除
+        return () => {
+            mediaQuery.removeEventListener("change", handleChange);
+        };
+    }, []);
+
     return (
         <>
             <div className={styles.navigation}>
                 <div className={`${styles.navigation_container} ${open ? styles.open : ""}`}>
                     <div className={styles.navigation_box}>
-                        {open ? <BamosLogo type="white" /> : <BamosLogo type="black" />}
-
+                        <BamosLogo type={open && !isDesktop ? "white" : "black"} />
                     </div>
+
                     <BamosDrawerMenu open={open} />
                 </div>
             </div>
+
             <BamosDrawerButton open={open} isOpen={isOpen} />
         </>
     );

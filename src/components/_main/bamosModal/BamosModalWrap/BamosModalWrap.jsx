@@ -15,7 +15,7 @@ export default function BamosModalWrap() {
             <div className={styles.modalWrapper}>
                 <BamosButton onClick={openModal} label="Feedback" />
 
-                {isOpen && <BamosModalWindow setIsOpen={setIsOpen} />}
+                {isOpen && <BamosModalWindow setIsOpen={setIsOpen} pro1 = "media" />}
             </div>
         </>
     );

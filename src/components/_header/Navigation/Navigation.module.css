@@ -33,6 +33,10 @@
 
 .navigation_container.open {
     background-color: #CD3796;
+
+    @media (width >= 768px){
+        background-color: transparent;
+    }
 }
 
 .navigation_box {

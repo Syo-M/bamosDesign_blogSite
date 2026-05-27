@@ -1,4 +1,4 @@
-export default function FormSelect({ form, setForm }) {
+export default function FormSelect({ form, setForm, name }) {
     const handleForm = (e) => {
         setForm({
             ...form,
@@ -19,7 +19,7 @@ export default function FormSelect({ form, setForm }) {
     return (
         <fieldset>
             <legend>How did you hear about BAMOS DESIGN?</legend>
-            <select name="media" id="media" value={form.media} onChange={handleForm}>
+            <select name={name} id={name} value={form[name]} onChange={handleForm}>
                 {optionList.map((option) => (
                     <option key={option.value} value={option.value}>
                         {option.label}
