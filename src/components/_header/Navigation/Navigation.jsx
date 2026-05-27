@@ -12,9 +12,13 @@ export default function Navigation() {
     const [isDesktop, setIsDesktop] = useState(false);
 
     useEffect(() => {
+        //window.matchMedia() は、CSSのメディアクエリをJavaScript側で判定するためのメソッド。
+
         const mediaQuery = window.matchMedia("(min-width: 768px)");
 
         // 初回判定
+        // mediaQuery.matches は、メディアクエリにマッチしているかどうかを示す真偽値が入っています。
+        // 画面幅が768px以上ならtrue、そうでなければfalseになります。
         setIsDesktop(mediaQuery.matches);
 
         // 画面幅が変わった時に実行
