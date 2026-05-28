@@ -1,16 +1,18 @@
 import styles from './Form.module.css';
 
-export default function FormCheckMulti({ form, setForm }) {
+export default function FormCheckMulti({ form, setForm, name }) {
     const handleFormMulti = (e) => {
-        const { name, value, checked } = e.target;
+        const fa = [...form[name]];
 
-        const nextFavorite = checked
-            ? [...form.favorite, value]
-            : form.favorite.filter((item) => item !== value);
+        if (e.target.checked) {
+            fa.push(e.target.value);
+        } else {
+            fa.splice(fa.indexOf(e.target.value), 1);
+        }
 
         setForm({
             ...form,
-            [name]: nextFavorite,
+            [e.target.name]: fa,
         });
     };
 
@@ -31,10 +33,10 @@ export default function FormCheckMulti({ form, setForm }) {
                     <span key={checkbox.id}>
                         <input
                             id={checkbox.id}
-                            name="favorite"
+                            name={name}
                             type="checkbox"
                             value={checkbox.value}
-                            checked={form.favorite.includes(checkbox.value)}
+                            checked={form[name].includes(checkbox.value)}
                             onChange={handleFormMulti}
                         />
                         <label htmlFor={checkbox.id}>{checkbox.label}</label>

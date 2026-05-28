@@ -1,6 +1,6 @@
 import styles from './Form.module.css';
 
-export default function FormRadio({ form, setForm }) {
+export default function FormRadio({ form, setForm, name }) {
     const handleForm = (e) => {
         setForm({
             ...form,
@@ -25,10 +25,10 @@ export default function FormRadio({ form, setForm }) {
                     <span key={radio.id}>
                         <input
                             type="radio"
-                            name="age"
+                            name={name}
                             id={radio.id}
                             value={radio.value}
-                            checked={form.age === radio.value}
+                            checked={form[name] === radio.value}
                             onChange={handleForm}
                         />
                         <label htmlFor={radio.id}>{radio.label}</label>
